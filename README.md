@@ -2,7 +2,7 @@
 
 ---
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3e4c6e8ea3d4469b816942602cd14e99)](https://www.codacy.com/gh/Team-IF/into-deeper-world)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/3e4c6e8ea3d4469b816942602cd14e99)](https://www.codacy.com/gh/Team-IF/into-the-deeper-world)
 
 ---
 
