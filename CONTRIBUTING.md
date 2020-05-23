@@ -16,4 +16,6 @@ or [PatrickKR [sharp] 8110](https://discord.com) on discord.
 We are always open for new members! We are Korean student developer team, creating various things.
 If you are interested on our team, you can always apply at [teamif.io homepage](https://teamif.io/career).
 
+---
+
 Thank you so much!
