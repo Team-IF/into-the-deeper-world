@@ -14,7 +14,6 @@ public class LOST : MonoBehaviour {
     private bool isGround;
     private bool isCrouch;
 
-    //땅에 닿아있는지 여부
     private CapsuleCollider capsuleCollider;
 
     [SerializeField]
@@ -39,7 +38,6 @@ public class LOST : MonoBehaviour {
 
     private Rigidbody myRigid;
 
-    // Start is called before the first frame update
     void Start() {
         theCamera = FindObjectOfType<Camera>();    
         myRigid = GetComponent<Rigidbody>();
@@ -50,7 +48,6 @@ public class LOST : MonoBehaviour {
         applyCrouchPosY = originPosY;
     }
 
-    // Update is called once per frame
     void Update() {
         IsGround();
         TryJump();
@@ -99,7 +96,7 @@ public class LOST : MonoBehaviour {
         float _posY = theCamera.transform.localPosition.y;
         int count = 0;
 
-        while (_posY != applyCrouchPosY) {
+        while (CheckDifferent(_posY, applyCrouchPosY, 0.01f)) {
             count++;
             _posY = Mathf.Lerp(_posY, applyCrouchPosY, 0.3f);
             theCamera.transform.localPosition = new Vector3(0, _posY, 0);
@@ -167,5 +164,19 @@ public class LOST : MonoBehaviour {
         currentCameraRotationX = Mathf.Clamp(currentCameraRotationX, -cameraRotationLimit, cameraRotationLimit);
 
         theCamera.transform.localEulerAngles = new Vector3(currentCameraRotationX, 0f, 0f);
+    }
+    
+    private static boolean CheckDifferent(float a, float b, float epsilon) {
+        final float absA = Math.abs(a);
+        final float absB = Math.abs(b);
+        final float diff = Math.abs(a - b);
+
+        if (a == b) {
+            return false;
+        } else if (a == 0 || b == 0 || absA + absB < Float.MIN_NORMAL) {
+            return diff > (epsilon * Float.MIN_NORMAL);
+        } else {
+            return diff / (absA + absB) > epsilon;
+        }
     }
 }
