@@ -1,4 +1,4 @@
-# Into The Deeper World
+# Into The Deeper World (Unity Branch)
 
 ---
 
@@ -17,7 +17,6 @@
 ---
 
 ## 프로그래밍 언어
--   Python
 -   C# (Unity)
 
 ---
