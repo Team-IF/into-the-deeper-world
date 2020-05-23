@@ -167,16 +167,6 @@ public class LOST : MonoBehaviour {
     }
     
     private static boolean CheckDifferent(float a, float b, float epsilon) {
-        final float absA = Math.abs(a);
-        final float absB = Math.abs(b);
-        final float diff = Math.abs(a - b);
-
-        if (a == b) {
-            return false;
-        } else if (a == 0 || b == 0 || absA + absB < Float.MIN_NORMAL) {
-            return diff > (epsilon * Float.MIN_NORMAL);
-        } else {
-            return diff / (absA + absB) > epsilon;
-        }
+        return Math.abs(a - b) / (a + b) > epsilon;
     }
 }
