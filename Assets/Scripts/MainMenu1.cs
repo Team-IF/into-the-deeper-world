@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -6,7 +7,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu1 : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public void StartGame() // but this only Debug 
+    {
+    }
     public void RunQuit()
     {
         Debug.Log("Quit");
@@ -18,10 +21,11 @@ public class MainMenu1 : MonoBehaviour
         SceneManager.LoadScene(scenesName);
     }
 
-    public void Start(string scenesName1) // but this only Debug
+    void Start()
     {
-        Debug.Log("Debugging" + scenesName1);
-        // SceneManager.LoadScene("scenesName");
-
+        Debug.Log("initializing MainMenu1.cs");
+    }
+    void Update()
+    {
     }
 }
