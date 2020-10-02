@@ -1,36 +1,27 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using UnityEngine;
 
 public class MM1_O_Graphics : MonoBehaviour
 {
-    void Start()
+    private void Start()
     {
         Debug.Log("initializing MM1_O_Graphics.cs");
     }
 
-    public Dropdown dropdown;
     public void WindowMode(int value)
     {
-        switch (value)
+        if (value == 0)
         {
-            case 0:
-            {
-                Screen.SetResolution (1920, 1080, true);
-                break;
-            }
-
-            case 1:
-            {
-                Screen.SetResolution(1280, 720, false);
-                break;
-            }
+            Screen.SetResolution(1920, 1080, true);
+        }
+        else if (value == 1)
+        {
+            Screen.SetResolution(1280, 720, false);
         }
     }
 
-    void Update()
+    // Update is called once per frame
+    private void Update() //
     {
+        // No Sciprt Here :(
     }
 }
