@@ -3,7 +3,7 @@ name: Bug Report
 about: Create a report to help us improve
 title: "[BUG] "
 labels: ''
-assignees: moole100, waixxt3213
+assignees: moole100, waixxt3213, patrick-mc
 
 ---
 
