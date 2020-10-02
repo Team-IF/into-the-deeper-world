@@ -1,23 +1,21 @@
-﻿using System;  
-using System.Collections;
-using System.Collections.Generic;
+﻿using System;
 using UnityEngine;
-using Discord;
 
 public class DRP : MonoBehaviour
 {
-    public Discord.Discord discord;
+    private Discord.Discord discord;
 
-    void Start()
+    private void Start()
     {
         discord = new Discord.Discord(756805917944578112, (UInt64)Discord.CreateFlags.Default);
         var now = DateTime.Now.ToLocalTime();
         var span = (now - new DateTime(1970, 1, 1, 0, 0, 0, 0).ToLocalTime());
         var activityManager = discord.GetActivityManager();
+        string DiscordRichDetail = "waiting";
         var activity = new Discord.Activity
         {
             State = "Into the Deeper world",
-            Details = "Waiting",
+            Details = DiscordRichDetail,
             Timestamps =
             {
                 Start = (int)span.TotalSeconds
@@ -40,7 +38,7 @@ public class DRP : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         discord.RunCallbacks();
     }
